@@ -1,0 +1,241 @@
+[gd_scene load_steps=22 format=3 uid="uid://cj1b1xhjdrhot"]
+
+[ext_resource type="Script" path="res://scripts/main.gd" id="1_c1mkj"]
+[ext_resource type="PackedScene" uid="uid://bk15fqw3yf1jk" path="res://scenes/tile_map.tscn" id="1_x6qj4"]
+[ext_resource type="PackedScene" uid="uid://d0052l0p1p5ho" path="res://scenes/enemy.tscn" id="3_4nptm"]
+[ext_resource type="PackedScene" uid="uid://bt4a5awdnqkjw" path="res://scenes/weapon.tscn" id="3_kfu5u"]
+[ext_resource type="PackedScene" uid="uid://ddkjstf7kckia" path="res://scenes/game_over_hud.tscn" id="4_bfgl0"]
+[ext_resource type="PackedScene" uid="uid://i2q50j676vvk" path="res://scenes/fire.tscn" id="5_gpofl"]
+[ext_resource type="PackedScene" uid="uid://mxsdjy5cpljr" path="res://scenes/hud.tscn" id="6_kev6w"]
+[ext_resource type="PackedScene" uid="uid://cnjpvb5gd2rd0" path="res://scenes/water.tscn" id="6_pbpbf"]
+[ext_resource type="PackedScene" uid="uid://csk58m4emkggy" path="res://scenes/pause_hud.tscn" id="7_82yk7"]
+[ext_resource type="PackedScene" uid="uid://bl3pm2hj5v88m" path="res://scenes/air.tscn" id="7_fcpg3"]
+[ext_resource type="PackedScene" uid="uid://dlvdcdcypp36o" path="res://scenes/wall.tscn" id="8_26p7n"]
+[ext_resource type="PackedScene" uid="uid://cnf163obr1a2x" path="res://scenes/cross.tscn" id="8_qngpn"]
+[ext_resource type="AudioStream" uid="uid://brx5ttdqr4ti0" path="res://sfx/Gracz - Przemieszczanie.wav" id="13_m4tfc"]
+[ext_resource type="AudioStream" uid="uid://bcknymgrg6010" path="res://sfx/Przeciwnicy - przemieszczanie.wav" id="14_oewbj"]
+[ext_resource type="AudioStream" uid="uid://76bvfo0450sn" path="res://sfx/Zabicie przeciwnika - pojedyncze.wav" id="15_uclec"]
+
+[sub_resource type="Gradient" id="Gradient_k47nc"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_k0lu7"]
+gradient = SubResource("Gradient_k47nc")
+fill = 1
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_f3pdh"]
+texture = SubResource("GradientTexture2D_k0lu7")
+modulate_color = Color(0.054902, 1, 1, 0.243137)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jpvfi"]
+bg_color = Color(0.158472, 0.158472, 0.158472, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pim05"]
+bg_color = Color(0.42, 0.42, 0.42, 1)
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_6jw0w"]
+color = Color(0.13833, 0.599535, 0.822886, 1)
+thickness = 2
+
+[node name="Main" type="Node" groups=["enemies", "walls", "weapons"]]
+script = ExtResource("1_c1mkj")
+enemy_scene = ExtResource("3_4nptm")
+weapon_scene = ExtResource("3_kfu5u")
+wall_particle = ExtResource("8_26p7n")
+fire_particle = ExtResource("5_gpofl")
+water_particle = ExtResource("6_pbpbf")
+air_particle = ExtResource("7_fcpg3")
+cross_particle = ExtResource("8_qngpn")
+
+[node name="TileMap" parent="." instance=ExtResource("1_x6qj4")]
+
+[node name="Panel2" type="Panel" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_f3pdh")
+
+[node name="GameBackground" type="CanvasGroup" parent="."]
+
+[node name="Black" type="Panel" parent="GameBackground"]
+offset_left = 32.0
+offset_top = 32.0
+offset_right = 192.0
+offset_bottom = 416.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_jpvfi")
+
+[node name="White0" type="Panel" parent="GameBackground"]
+visible = false
+offset_left = 32.0
+offset_top = 32.0
+offset_right = 48.0
+offset_bottom = 416.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_pim05")
+
+[node name="White1" type="Panel" parent="GameBackground"]
+visible = false
+offset_left = 48.0
+offset_top = 32.0
+offset_right = 64.0
+offset_bottom = 416.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_pim05")
+
+[node name="White2" type="Panel" parent="GameBackground"]
+visible = false
+offset_left = 64.0
+offset_top = 32.0
+offset_right = 80.0
+offset_bottom = 416.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_pim05")
+
+[node name="White3" type="Panel" parent="GameBackground"]
+visible = false
+offset_left = 80.0
+offset_top = 32.0
+offset_right = 96.0
+offset_bottom = 416.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_pim05")
+
+[node name="White4" type="Panel" parent="GameBackground"]
+visible = false
+offset_left = 96.0
+offset_top = 32.0
+offset_right = 112.0
+offset_bottom = 416.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_pim05")
+
+[node name="White5" type="Panel" parent="GameBackground"]
+visible = false
+offset_left = 112.0
+offset_top = 32.0
+offset_right = 128.0
+offset_bottom = 416.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_pim05")
+
+[node name="White6" type="Panel" parent="GameBackground"]
+visible = false
+offset_left = 128.0
+offset_top = 32.0
+offset_right = 144.0
+offset_bottom = 416.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_pim05")
+
+[node name="White7" type="Panel" parent="GameBackground"]
+visible = false
+offset_left = 144.0
+offset_top = 32.0
+offset_right = 160.0
+offset_bottom = 416.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_pim05")
+
+[node name="White8" type="Panel" parent="GameBackground"]
+visible = false
+offset_left = 160.0
+offset_top = 32.0
+offset_right = 176.0
+offset_bottom = 416.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_pim05")
+
+[node name="White9" type="Panel" parent="GameBackground"]
+visible = false
+offset_left = 176.0
+offset_top = 32.0
+offset_right = 192.0
+offset_bottom = 416.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_pim05")
+
+[node name="MoveMobs" type="Timer" parent="."]
+wait_time = 3.0
+autostart = true
+
+[node name="SpawnMobs" type="Timer" parent="."]
+wait_time = 0.15
+one_shot = true
+
+[node name="Borders" type="CanvasGroup" parent="."]
+z_index = 1
+
+[node name="Panel" type="Panel" parent="Borders"]
+offset_left = 32.0
+offset_top = 31.0
+offset_right = 191.0
+offset_bottom = 40.0
+theme_override_styles/panel = SubResource("StyleBoxLine_6jw0w")
+
+[node name="Panel3" type="Panel" parent="Borders"]
+offset_left = 192.0
+offset_top = 32.0
+offset_right = 575.0
+offset_bottom = 42.0
+rotation = 1.5708
+theme_override_styles/panel = SubResource("StyleBoxLine_6jw0w")
+
+[node name="Panel4" type="Panel" parent="Borders"]
+offset_left = 32.0
+offset_top = 32.0
+offset_right = 415.0
+offset_bottom = 55.0
+rotation = 1.5708
+theme_override_styles/panel = SubResource("StyleBoxLine_6jw0w")
+
+[node name="Panel2" type="Panel" parent="Borders"]
+offset_left = 191.0
+offset_top = 416.0
+offset_right = 350.0
+offset_bottom = 424.0
+rotation = 3.14159
+theme_override_styles/panel = SubResource("StyleBoxLine_6jw0w")
+
+[node name="GameOverHUD" parent="." instance=ExtResource("4_bfgl0")]
+visible = false
+
+[node name="PauseHUD" parent="." instance=ExtResource("7_82yk7")]
+visible = false
+
+[node name="HUD" parent="." instance=ExtResource("6_kev6w")]
+
+[node name="MoveDown" type="Timer" parent="."]
+wait_time = 0.15
+
+[node name="MoveLeft" type="Timer" parent="."]
+wait_time = 0.15
+
+[node name="MoveRight" type="Timer" parent="."]
+wait_time = 0.15
+
+[node name="SpellCooldown" type="Timer" parent="."]
+wait_time = 0.75
+one_shot = true
+
+[node name="Sound" type="Node" parent="."]
+
+[node name="PlayerSFX" type="AudioStreamPlayer" parent="Sound"]
+stream = ExtResource("13_m4tfc")
+
+[node name="MobSFX" type="AudioStreamPlayer" parent="Sound"]
+stream = ExtResource("14_oewbj")
+
+[node name="DirectHitSFX" type="AudioStreamPlayer" parent="Sound"]
+stream = ExtResource("15_uclec")
+volume_db = -4.0
+
+[node name="WallSFX" type="AudioStreamPlayer" parent="Sound"]
+
+[node name="WallSFX2" type="AudioStreamPlayer" parent="Sound"]
+
+[node name="WallSFX3" type="AudioStreamPlayer" parent="Sound"]
+
+[node name="CheckDiff" type="Timer" parent="."]
+wait_time = 1.5
+autostart = true
+
+[connection signal="timeout" from="MoveMobs" to="." method="_on_move_mobs_timeout"]
+[connection signal="timeout" from="SpawnMobs" to="." method="new_wave"]
+[connection signal="new_game" from="GameOverHUD" to="." method="new_game"]
+[connection signal="cont" from="PauseHUD" to="." method="continue_game"]
+[connection signal="timeout" from="MoveDown" to="." method="_on_move_down_timeout"]
+[connection signal="timeout" from="MoveLeft" to="." method="_on_move_left_timeout"]
+[connection signal="timeout" from="MoveRight" to="." method="_on_move_right_timeout"]
+[connection signal="timeout" from="SpellCooldown" to="." method="_on_spell_cooldown_timeout"]
+[connection signal="timeout" from="CheckDiff" to="." method="_on_check_diff_timeout"]

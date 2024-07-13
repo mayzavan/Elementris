@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://d0052l0p1p5ho"]
+
+[ext_resource type="Texture2D" uid="uid://cnned1ixmnipe" path="res://myart/ghost.png" id="1_pvnk3"]
+
+[node name="enemy" type="Sprite2D"]
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("1_pvnk3")
+region_rect = Rect2(17, 170, 16, 16)

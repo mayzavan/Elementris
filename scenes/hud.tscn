@@ -1,0 +1,334 @@
+[gd_scene load_steps=5 format=3 uid="uid://mxsdjy5cpljr"]
+
+[ext_resource type="Script" path="res://scripts/hud.gd" id="1_mda58"]
+[ext_resource type="Texture2D" uid="uid://cpmitsshoqo3e" path="res://myart/elements2.png" id="3_3judg"]
+[ext_resource type="FontFile" uid="uid://btq1v7yv1t0ay" path="res://fonts/retroville/Retroville NC.ttf" id="3_vo88d"]
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_im8y5"]
+color = Color(0.137255, 0.6, 0.823529, 1)
+thickness = 2
+
+[node name="HUD" type="CanvasLayer"]
+script = ExtResource("1_mda58")
+
+[node name="ScorePanel" type="Panel" parent="."]
+offset_left = 237.0
+offset_top = 290.0
+offset_right = 357.0
+offset_bottom = 357.0
+
+[node name="ScoreLabel" type="Label" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 52.0002
+offset_top = 93.45
+offset_right = 159.0
+offset_bottom = 129.45
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_vo88d")
+theme_override_font_sizes/font_size = 20
+text = "53647"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="ScoreText" type="Label" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 52.0002
+offset_top = 63.395
+offset_right = 159.0
+offset_bottom = 99.395
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_vo88d")
+theme_override_font_sizes/font_size = 20
+text = "Score"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="ScorePanel2" type="Panel" parent="."]
+offset_left = 237.0
+offset_top = 366.0
+offset_right = 357.0
+offset_bottom = 433.0
+
+[node name="Highscore" type="Label" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 52.0002
+offset_top = 169.45
+offset_right = 159.0
+offset_bottom = 205.45
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_vo88d")
+theme_override_font_sizes/font_size = 20
+text = "53647"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="ScoreText2" type="Label" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 52.0002
+offset_top = 139.395
+offset_right = 159.0
+offset_bottom = 175.395
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_vo88d")
+theme_override_font_sizes/font_size = 20
+text = "Best"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="FPSLabel" type="Label" parent="."]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -32.0
+offset_bottom = 24.0
+grow_horizontal = 0
+theme_override_fonts/font = ExtResource("3_vo88d")
+theme_override_font_sizes/font_size = 10
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CurrentWPanel" type="Panel" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 40.0
+offset_top = -192.765
+offset_right = 160.0
+offset_bottom = -60.22
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Sprite" type="Sprite2D" parent="CurrentWPanel"]
+position = Vector2(61, 87.965)
+texture = ExtResource("3_3judg")
+hframes = 2
+vframes = 2
+region_rect = Rect2(384, 32, 32, 32)
+
+[node name="CurrentWLabel" type="Label" parent="CurrentWPanel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -13.5
+offset_top = -6.695
+offset_right = 26.695
+offset_bottom = 66.305
+grow_horizontal = 2
+scale = Vector2(0.75, 0.75)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_vo88d")
+theme_override_font_sizes/font_size = 20
+text = "Current weapon"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="NextWPanel" type="Panel" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 58.325
+offset_top = -42.615
+offset_right = 141.92
+offset_bottom = 59.165
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Sprite" type="Sprite2D" parent="NextWPanel"]
+position = Vector2(43.25, 74.76)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_3judg")
+hframes = 2
+vframes = 2
+region_rect = Rect2(384, 32, 32, 32)
+
+[node name="NextWLabel" type="Label" parent="NextWPanel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -13.5
+offset_top = -4.16
+offset_right = 26.5
+offset_bottom = 68.84
+grow_horizontal = 2
+scale = Vector2(0.75, 0.75)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_vo88d")
+theme_override_font_sizes/font_size = 20
+text = "Next weapon"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Borders" type="CanvasGroup" parent="."]
+z_index = 1
+
+[node name="Panel" type="Panel" parent="Borders"]
+offset_left = 233.0
+offset_top = 31.0
+offset_right = 351.0
+offset_bottom = 40.0
+theme_override_styles/panel = SubResource("StyleBoxLine_im8y5")
+
+[node name="Panel3" type="Panel" parent="Borders"]
+offset_left = 352.0
+offset_top = 32.0
+offset_right = 483.0
+offset_bottom = 48.0
+rotation = 1.5708
+theme_override_styles/panel = SubResource("StyleBoxLine_im8y5")
+
+[node name="Panel4" type="Panel" parent="Borders"]
+offset_left = 233.0
+offset_top = 32.0
+offset_right = 365.0
+offset_bottom = 55.0
+rotation = 1.5708
+theme_override_styles/panel = SubResource("StyleBoxLine_im8y5")
+
+[node name="Panel2" type="Panel" parent="Borders"]
+offset_left = 333.0
+offset_top = 283.0
+offset_right = 415.0
+offset_bottom = 291.0
+rotation = 3.14159
+theme_override_styles/panel = SubResource("StyleBoxLine_im8y5")
+
+[node name="Borders2" type="CanvasGroup" parent="."]
+z_index = 1
+
+[node name="Panel" type="Panel" parent="Borders2"]
+offset_left = 233.0
+offset_top = 163.0
+offset_right = 351.0
+offset_bottom = 172.0
+theme_override_styles/panel = SubResource("StyleBoxLine_im8y5")
+
+[node name="Panel3" type="Panel" parent="Borders2"]
+offset_left = 334.0
+offset_top = 182.0
+offset_right = 434.0
+offset_bottom = 198.0
+rotation = 1.5708
+theme_override_styles/panel = SubResource("StyleBoxLine_im8y5")
+
+[node name="Panel4" type="Panel" parent="Borders2"]
+offset_left = 251.0
+offset_top = 181.0
+offset_right = 352.0
+offset_bottom = 204.0
+rotation = 1.5708
+theme_override_styles/panel = SubResource("StyleBoxLine_im8y5")
+
+[node name="Panel2" type="Panel" parent="Borders2"]
+offset_left = 333.0
+offset_top = 182.0
+offset_right = 415.0
+offset_bottom = 190.0
+rotation = 3.14159
+theme_override_styles/panel = SubResource("StyleBoxLine_im8y5")
+
+[node name="Borders3" type="CanvasGroup" parent="."]
+z_index = 1
+
+[node name="Panel" type="Panel" parent="Borders3"]
+offset_left = 238.0
+offset_top = 356.0
+offset_right = 356.0
+offset_bottom = 365.0
+theme_override_styles/panel = SubResource("StyleBoxLine_im8y5")
+
+[node name="Panel3" type="Panel" parent="Borders3"]
+offset_left = 357.0
+offset_top = 290.0
+offset_right = 423.0
+offset_bottom = 306.0
+rotation = 1.5708
+theme_override_styles/panel = SubResource("StyleBoxLine_im8y5")
+
+[node name="Panel4" type="Panel" parent="Borders3"]
+offset_left = 238.0
+offset_top = 289.0
+offset_right = 306.0
+offset_bottom = 312.0
+rotation = 1.5708
+theme_override_styles/panel = SubResource("StyleBoxLine_im8y5")
+
+[node name="Panel2" type="Panel" parent="Borders3"]
+offset_left = 356.0
+offset_top = 290.0
+offset_right = 474.0
+offset_bottom = 298.0
+rotation = 3.14159
+theme_override_styles/panel = SubResource("StyleBoxLine_im8y5")
+
+[node name="Panel5" type="Panel" parent="Borders3"]
+offset_left = 238.0
+offset_top = 432.0
+offset_right = 356.0
+offset_bottom = 441.0
+theme_override_styles/panel = SubResource("StyleBoxLine_im8y5")
+
+[node name="Panel6" type="Panel" parent="Borders3"]
+offset_left = 357.0
+offset_top = 366.0
+offset_right = 423.0
+offset_bottom = 382.0
+rotation = 1.5708
+theme_override_styles/panel = SubResource("StyleBoxLine_im8y5")
+
+[node name="Panel7" type="Panel" parent="Borders3"]
+offset_left = 238.0
+offset_top = 365.0
+offset_right = 306.0
+offset_bottom = 388.0
+rotation = 1.5708
+theme_override_styles/panel = SubResource("StyleBoxLine_im8y5")
+
+[node name="Panel8" type="Panel" parent="Borders3"]
+offset_left = 356.0
+offset_top = 366.0
+offset_right = 474.0
+offset_bottom = 374.0
+rotation = 3.14159
+theme_override_styles/panel = SubResource("StyleBoxLine_im8y5")

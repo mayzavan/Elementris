@@ -1,0 +1,68 @@
+[gd_scene load_steps=3 format=3 uid="uid://ddkjstf7kckia"]
+
+[ext_resource type="Script" path="res://scripts/game_over_hud.gd" id="1_4vavs"]
+[ext_resource type="FontFile" uid="uid://btq1v7yv1t0ay" path="res://fonts/retroville/Retroville NC.ttf" id="2_a4pth"]
+
+[node name="GameOverHUD" type="CanvasLayer"]
+script = ExtResource("1_4vavs")
+
+[node name="Panel" type="Panel" parent="."]
+modulate = Color(1, 1, 1, 0.854902)
+offset_left = 32.0
+offset_top = 32.0
+offset_right = 192.0
+offset_bottom = 416.0
+
+[node name="GameOverLabel" type="Label" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -165.08
+offset_top = -124.0
+offset_right = 8.84999
+offset_bottom = -10.9998
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_a4pth")
+theme_override_font_sizes/font_size = 30
+text = "GAME OVER"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="MainMenuButton" type="Button" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -128.0
+offset_top = 98.0
+offset_right = -32.0
+offset_bottom = 129.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_a4pth")
+text = "Main Menu"
+
+[node name="PlayAgainButton" type="Button" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -128.0
+offset_top = 38.0
+offset_right = -32.0
+offset_bottom = 69.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_a4pth")
+text = "Play Again"
+
+[connection signal="button_down" from="MainMenuButton" to="." method="_on_main_menu_button_button_down"]
+[connection signal="button_down" from="PlayAgainButton" to="." method="_on_play_again_button_button_down"]

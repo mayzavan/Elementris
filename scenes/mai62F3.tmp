@@ -1,0 +1,34 @@
+[gd_scene load_steps=8 format=3 uid="uid://cj1b1xhjdrhot"]
+
+[ext_resource type="Script" path="res://scripts/main.gd" id="1_c1mkj"]
+[ext_resource type="PackedScene" uid="uid://bk15fqw3yf1jk" path="res://scenes/tile_map.tscn" id="1_x6qj4"]
+[ext_resource type="PackedScene" uid="uid://d0052l0p1p5ho" path="res://scenes/enemy.tscn" id="3_4nptm"]
+[ext_resource type="PackedScene" uid="uid://bt4a5awdnqkjw" path="res://scenes/weapon.tscn" id="3_kfu5u"]
+[ext_resource type="PackedScene" uid="uid://ddkjstf7kckia" path="res://scenes/game_over_hud.tscn" id="4_bfgl0"]
+[ext_resource type="PackedScene" uid="uid://mxsdjy5cpljr" path="res://scenes/hud.tscn" id="6_kev6w"]
+[ext_resource type="PackedScene" uid="uid://csk58m4emkggy" path="res://scenes/pause_hud.tscn" id="7_82yk7"]
+
+[node name="Main" type="Node" groups=["enemies", "weapons"]]
+script = ExtResource("1_c1mkj")
+enemy_scene = ExtResource("3_4nptm")
+weapon_scene = ExtResource("3_kfu5u")
+
+[node name="TileMap" parent="." instance=ExtResource("1_x6qj4")]
+
+[node name="MoveMobs" type="Timer" parent="."]
+autostart = true
+
+[node name="SpawnMobs" type="Timer" parent="."]
+wait_time = 0.15
+one_shot = true
+
+[node name="GameOverHUD" parent="." instance=ExtResource("4_bfgl0")]
+
+[node name="PauseHUD" parent="." instance=ExtResource("7_82yk7")]
+
+[node name="HUD" parent="." instance=ExtResource("6_kev6w")]
+
+[connection signal="timeout" from="MoveMobs" to="." method="_on_move_mobs_timeout"]
+[connection signal="timeout" from="SpawnMobs" to="." method="new_wave"]
+[connection signal="new_game" from="GameOverHUD" to="." method="new_game"]
+[connection signal="cont" from="PauseHUD" to="." method="continue_game"]

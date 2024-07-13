@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://cnf163obr1a2x"]
+
+[ext_resource type="Texture2D" uid="uid://dibqylhdtxllx" path="res://weapons.png" id="1_lxypm"]
+
+[node name="Cross" type="Sprite2D"]
+modulate = Color(1, 0.0980392, 0.0862745, 1)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_lxypm")
+region_enabled = true
+region_rect = Rect2(128, 32, 32, 32)

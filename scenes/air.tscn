@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://bl3pm2hj5v88m"]
+
+[ext_resource type="Texture2D" uid="uid://cpmitsshoqo3e" path="res://myart/elements2.png" id="1_tc76y"]
+
+[node name="Air" type="Sprite2D"]
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("1_tc76y")
+region_enabled = true
+region_rect = Rect2(64, 0, 64, 64)

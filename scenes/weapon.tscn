@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://bt4a5awdnqkjw"]
+
+[ext_resource type="Script" path="res://scripts/weapon.gd" id="1_g5twd"]
+[ext_resource type="Texture2D" uid="uid://cpmitsshoqo3e" path="res://myart/elements2.png" id="2_ai15m"]
+
+[node name="Weapon" type="RigidBody2D"]
+scale = Vector2(0.5, 0.5)
+gravity_scale = 0.0
+script = ExtResource("1_g5twd")
+
+[node name="Sprite" type="Sprite2D" parent="."]
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("2_ai15m")
+hframes = 2
+vframes = 2
+frame = 1
+region_rect = Rect2(288, 32, 32, 32)

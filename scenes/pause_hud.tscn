@@ -1,0 +1,68 @@
+[gd_scene load_steps=3 format=3 uid="uid://csk58m4emkggy"]
+
+[ext_resource type="Script" path="res://scripts/pause_hud.gd" id="1_44btl"]
+[ext_resource type="FontFile" uid="uid://btq1v7yv1t0ay" path="res://fonts/retroville/Retroville NC.ttf" id="2_6b3js"]
+
+[node name="PauseHUD" type="CanvasLayer"]
+script = ExtResource("1_44btl")
+
+[node name="Panel" type="Panel" parent="."]
+modulate = Color(1, 1, 1, 0.854902)
+offset_left = 32.0
+offset_top = 32.0
+offset_right = 192.0
+offset_bottom = 416.0
+
+[node name="GameOverLabel" type="Label" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -163.0
+offset_top = -128.0
+offset_right = 10.93
+offset_bottom = -14.9998
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_6b3js")
+theme_override_font_sizes/font_size = 30
+text = "GAME PAUSED"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="MainMenuButton" type="Button" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -128.0
+offset_top = 98.0
+offset_right = -32.0
+offset_bottom = 129.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_6b3js")
+text = "Main Menu"
+
+[node name="ContinueButton" type="Button" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -128.0
+offset_top = 38.0
+offset_right = -32.0
+offset_bottom = 69.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_6b3js")
+text = "Continue"
+
+[connection signal="button_down" from="MainMenuButton" to="." method="_on_main_menu_button_button_down"]
+[connection signal="button_down" from="ContinueButton" to="." method="_on_play_again_button_button_down"]
